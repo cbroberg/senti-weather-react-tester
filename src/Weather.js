@@ -11,13 +11,14 @@ class Weather extends Component {
     }
 
     componentWillMount = async () => {
-        // const coords = {
-        //     lat: 57.043271,
-        //     lon: 9.921155,
-		// }
+        const coords = {
+            lat: 57.043271,
+            lon: 9.921155,
+		}
 		
         const cityName = 'Aalborg'
-        this.setState({ weatherObj: await GetWeather(cityName) })
+        // this.setState({ weatherObj: await GetWeather(cityName) })
+		this.setState({ weatherObj: await GetWeather(coords) })
     }
 
     render () {
@@ -25,7 +26,7 @@ class Weather extends Component {
         console.log(weatherObj)
         return (
             <div>
-                {weatherObj ? `Weather in ${weatherObj.name} , ${weatherObj.sys.country} : ${weatherObj.weather[0].main} - ${weatherObj.weather[0].description} ${weatherObj.main.temp - 273.15}  °C outside.`
+                {weatherObj ? `Weather in ${weatherObj.name} , ${weatherObj.sys.country} : ${weatherObj.weather[0].main} - ${weatherObj.weather[0].description} ${Math.round(weatherObj.main.temp - 273.15)}  °C outside.`
                             : `Loading`}
             </div>
         )
