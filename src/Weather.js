@@ -11,10 +11,11 @@ class Weather extends Component {
     }
 
     componentWillMount = async () => {
-        const coords = {
-            lat: 57.043271,
-            lon: 9.921155,
-        }
+        // const coords = {
+        //     lat: 57.043271,
+        //     lon: 9.921155,
+		// }
+		
         const cityName = 'Aalborg'
         this.setState({ weatherObj: await GetWeather(cityName) })
     }

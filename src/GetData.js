@@ -1,4 +1,3 @@
-import React from 'react';
 import { create } from 'apisauce'
 
 const api = create({
@@ -6,21 +5,21 @@ const api = create({
 })
 
 export const GetWeather = async (parameter) => {
-    var data;
+	var obj
     if (typeof (parameter) === 'object') {
-        var obj = await api.get('weather?lat=' + parameter.lat + '&lon=' + parameter.lon + '&appid=5e1d43ad492006206d3f953b8b45f42e')
+        obj = await api.get('weather?lat=' + parameter.lat + '&lon=' + parameter.lon + '&appid=5e1d43ad492006206d3f953b8b45f42e')
             .then((res) => {
                 if (res.ok) {
-                    data = res.data;
+                    return res.data
                 }
             })
     } else {
-        var obj = await api.get('weather?q=' + parameter + '&appid=5e1d43ad492006206d3f953b8b45f42e')
+        obj = await api.get('weather?q=' + parameter + '&appid=5e1d43ad492006206d3f953b8b45f42e')
             .then((res) => {
                 if (res.ok){
-                    data = res.data;
+					return res.data
                 }
             })
-    }
-    if (data) return data;
+	}
+	if (obj) return obj
 }
