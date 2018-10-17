@@ -34,3 +34,12 @@ class Weather extends Component {
 }
 
 export default Weather
+
+// Dark Sky API
+// https://api.darksky.net/forecast/ae02f869f759e8981632e60a5739ca39/57.043271,9.921155?lang=da&units=auto
+// https://api.darksky.net/forecast/ae02f869f759e8981632e60a5739ca39/57.043271,9.921155,255657600?lang=da&units=auto
+// https://api.darksky.net/forecast/ae02f869f759e8981632e60a5739ca39/57.043271,9.921155,1539561600?lang=da&units=auto
+// https://github.com/darkskyapp/skycons
+
+// OpenWeatherMap
+// https://openweathermap.org/weather-conditions
